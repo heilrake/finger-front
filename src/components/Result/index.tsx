@@ -1,9 +1,9 @@
-import { FC } from "react";
-import { Box, Button, Typography } from "@mui/material";
+import { FC } from 'react';
+import { Box, Button, Typography } from '@mui/material';
 
-import LinearProgressWithLabel from "../common/LinearProgress";
+import LinearProgressWithLabel from '../common/LinearProgress';
 
-import useStyles from "./styles";
+import useStyles from './styles';
 
 const Result: FC<ResultProps> = ({ result, checkImage, onReload }) => {
   const classes = useStyles();
@@ -15,7 +15,7 @@ const Result: FC<ResultProps> = ({ result, checkImage, onReload }) => {
         <Typography>Name: {result.user.name}</Typography>
         <Typography>Age: {result.user.age}</Typography>
         <Box textAlign="center" width="100%">
-          <Typography>Процент співпадання:</Typography>
+          <Typography>Match percentage:</Typography>
           <LinearProgressWithLabel value={result.source} />
         </Box>
       </Box>
@@ -24,7 +24,7 @@ const Result: FC<ResultProps> = ({ result, checkImage, onReload }) => {
       </Box>
       <Box display="flex" justifyContent="center" width="100%">
         <Button variant="contained" onClick={onReload}>
-          Спробувати ще раз
+          Try again
         </Button>
       </Box>
     </Box>
@@ -32,7 +32,7 @@ const Result: FC<ResultProps> = ({ result, checkImage, onReload }) => {
     <Box className={classes.user_not_found_wrapper}>
       <Typography>This user could not be found</Typography>
       <Button variant="contained" onClick={onReload}>
-        Спробувати ще раз
+        Try again
       </Button>
     </Box>
   );
